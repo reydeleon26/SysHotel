@@ -32,9 +32,15 @@ namespace SysHotelv1.Models
         [Display(Name ="Nombres")]
         [Required]
         public string FullName { get; set; }
+        [Display(Name = "Apellidos")]
+        [Required]
         public string LastName { get; set; }
+        [Display(Name = "Correo")]
         public string Email { get; set; }
+        [Display(Name = "Pais")]
         public Country Country { get; set; }
+        [Display(Name = "Telefono")]
+        [Required]
         public string Phone { get; set; }
         public ICollection<Reservation> Reservation { get; set; }
     }
