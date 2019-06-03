@@ -7,11 +7,6 @@ using System.Web;
 
 namespace SysHotelv1.Models
 {
-    public class MetaData
-    {
-
-    }
-
     public class RoomsMetadata
     {
         [Key]
@@ -26,7 +21,7 @@ namespace SysHotelv1.Models
         public BedType BedType { get; set; }
         [Display(Name = "Numero de Habitacion")]
         [Required(ErrorMessage = "El campo de numero de habitacion es obligatorio")]
-        [MaxLength(length:25)]
+        [MaxLength(length:10)]
         public string RoomNumber { get; set; }
 
     }
