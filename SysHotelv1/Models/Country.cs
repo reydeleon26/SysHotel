@@ -11,6 +11,7 @@ namespace SysHotelv1.Models
         public string Name { get; set; }
         public string Nationaly { get; set; }
         public ICollection<City> City { get; set; }
+        public ICollection<Clients> Clients { get; set; }
 
     }
 }

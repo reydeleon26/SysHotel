@@ -175,13 +175,17 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BedType.cs" />
+    <Compile Include="Models\BookingStatus.cs" />
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Clients.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\ExtendedClass.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MetaData.cs" />
     <Compile Include="Models\PricesPerPerson.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\ReservationDetails.cs" />
     <Compile Include="Models\Rooms.cs" />
     <Compile Include="Models\RoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
