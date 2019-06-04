@@ -9,7 +9,9 @@ namespace SysHotelv1.Models
     {
         public int Id { get; set; }
         public RoomType RoomType { get; set; }
+        public int RoomTypeId { get; set; }
         public BedType BedType { get; set; }
+        public int BedTypeId { get; set; }
         public string RoomNumber { get; set; }
         public ICollection<ReservationDetails> ReservationDetails { get; set; }
 

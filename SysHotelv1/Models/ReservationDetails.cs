@@ -8,7 +8,9 @@ namespace SysHotelv1.Models
     public class ReservationDetails
     {
         public int Id { get; set; }
+        public int RoomId { get; set; }
         public Rooms Rooms {get;set;}
+        public int ReservationId { get; set; }
         public Reservation Reservation { get; set; }
         public int ChildQty { get; set; }
         public int AdultQty { get; set; }
