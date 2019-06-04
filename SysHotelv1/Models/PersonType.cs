@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SysHotelv1.Models
 {
-    public class PricesPerPerson
+    public class PersonType
     {
         public int Id { get; set; }
         public string Description { get; set; }

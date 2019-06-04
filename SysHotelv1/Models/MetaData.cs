@@ -9,13 +9,10 @@ namespace SysHotelv1.Models
 {
     public class RoomsMetadata
     {
-        [Key]
         public int Id { get; set; }
-        [ForeignKey("Id")]
         [Display(Name ="Tipo de Habitacion")]
         [Required(ErrorMessage ="El campo de tipo de habitacion es obligatorio")]
         public RoomType RoomType { get; set; }
-        [ForeignKey("Id")]
         [Display(Name = "Tipo de Cama")]
         [Required(ErrorMessage = "El campo de tipo de camas es obligatorio")]
         public BedType BedType { get; set; }

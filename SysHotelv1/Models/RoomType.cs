@@ -7,6 +7,8 @@ namespace SysHotelv1.Models
 {
     public class RoomType
     {
+
+        
         public int Id { get; set; }
         public string Description { get; set; }
         public decimal PricePerRoom { get; set; }         

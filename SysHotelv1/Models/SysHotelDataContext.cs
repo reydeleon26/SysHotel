@@ -15,7 +15,7 @@ namespace SysHotelv1.Models
         public DbSet<City> Cities { get; set; }
         public DbSet<Clients> Clients {get;set;}
         public DbSet<Country> Countries { get; set; }
-        public DbSet<PricesPerPerson> PricesPerPeople { get; set; }
+        public DbSet<PersonType> PricesPerPeople { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<ReservationDetails> ReservationDetails { get; set; }
         public DbSet<Rooms> Rooms { get; set; }
@@ -31,19 +31,18 @@ namespace SysHotelv1.Models
             modelBuilder.Entity<City>().HasKey(p => new { p.Id });
             modelBuilder.Entity<BedType>().HasKey(p => new { p.Id });
             modelBuilder.Entity<BookingStatus>().HasKey(p => new { p.Id });
-            modelBuilder.Entity<PricesPerPerson>().HasKey(p => new { p.Id });
+            modelBuilder.Entity<PersonType>().HasKey(p => new { p.Id });
             modelBuilder.Entity<RoomType>().HasKey(p => new { p.Id });
             modelBuilder.Entity<Country>().HasKey(p => new { p.Id });
             #endregion
 
             #region ForeignKeys
-            modelBuilder.Entity<Reservation>().Ha
+            modelBuilder.Entity<Reservation>();
             #endregion
 
             #region HasRequired
-            modelBuilder.Entity<City>().HasRequired(x => x.Country);
-            modelBuilder.Entity<Country>().HasRequired(x => Cities);
-            modelBuilder.Entity<ReservationDetails>().HasRequired(x => x.Reservation);
+            modelBuilder.Entity<City>().HasRequired<Country>(s => s.Country).WithMany(t => t.City).HasForeignKey<int>(s => s.CountryId);
+            modelBuilder.Entity<ReservationDetails>().HasRequired<Reservation>(s => s.Reservation).WithMany(t => t.ReservationDetails).HasForeignKey<int>(s => s.ReservationId);
             modelBuilder.Entity<ReservationDetails>().HasRequired(x => x.Rooms);
             modelBuilder.Entity<Rooms>().HasRequired(x => x.RoomType);
             modelBuilder.Entity<Rooms>().HasRequired(x => x.BedType);
