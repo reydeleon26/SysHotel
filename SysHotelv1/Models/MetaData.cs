@@ -44,4 +44,19 @@ namespace SysHotelv1.Models
         public string Phone { get; set; }
         public ICollection<Reservation> Reservation { get; set; }
     }
+    public class CountryMetadata
+    {
+        [Required]
+        [Display(Name="Id")]
+        public int Id { get; set; }
+        [Required]
+        [Display(Name = "Pais")]
+        public string Name { get; set; }
+        [Required]
+        [Display(Name = "Nacionalidad")]
+        public string Nationaly { get; set; }
+        public ICollection<City> City { get; set; }
+        public ICollection<Clients> Clients { get; set; }
+    }
+
 }
