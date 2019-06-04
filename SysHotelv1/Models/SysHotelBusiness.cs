@@ -14,6 +14,11 @@ namespace SysHotelv1.Models
             return true;
         }
 
+        public bool ValidateAvailability(int IdRoom, DateTime EntraceDate, DateTime OutDate)
+        {
+            return true;
+        }
+
         public int getReservationTotal()
         {
             return 3;

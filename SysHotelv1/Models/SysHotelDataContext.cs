@@ -20,6 +20,7 @@ namespace SysHotelv1.Models
         public DbSet<ReservationDetails> ReservationDetails { get; set; }
         public DbSet<Rooms> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
+        
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
