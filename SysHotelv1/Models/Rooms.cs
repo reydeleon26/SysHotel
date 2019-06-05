@@ -15,5 +15,6 @@ namespace SysHotelv1.Models
         public string RoomNumber { get; set; }
         public ICollection<ReservationDetails> ReservationDetails { get; set; }
 
+
     }
 }

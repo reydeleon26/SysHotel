@@ -12,6 +12,7 @@ namespace SysHotelv1.Controllers
         {
             return View();
         }
+       
 
         public ActionResult About()
         {

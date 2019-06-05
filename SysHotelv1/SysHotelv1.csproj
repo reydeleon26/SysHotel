@@ -181,10 +181,11 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\ExtendedClass.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Invoices.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Messenger.cs" />
     <Compile Include="Models\MetaData.cs" />
-    <Compile Include="Models\PricesPerPerson.cs" />
+    <Compile Include="Models\PersonType.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\ReservationDetails.cs" />
     <Compile Include="Models\Rooms.cs" />

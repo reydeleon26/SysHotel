@@ -14,6 +14,9 @@ namespace SysHotelv1.Models
         public Reservation Reservation { get; set; }
         public int ChildQty { get; set; }
         public int AdultQty { get; set; }
+        public ICollection<Invoices> Invoices { get; set; }
+
+        }
 
 
     }

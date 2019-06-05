@@ -11,7 +11,7 @@ namespace SysHotelv1.Models
        public string Description { get; set; }
        public decimal PricerPerBed { get; set; }
        public ICollection<Rooms> Rooms { get; set; }
-
+       public ICollection<ReservationDetails> ReservationDetails { get; set; }
 
 
     }

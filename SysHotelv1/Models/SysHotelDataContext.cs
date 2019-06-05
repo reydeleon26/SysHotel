@@ -20,6 +20,7 @@ namespace SysHotelv1.Models
         public DbSet<ReservationDetails> ReservationDetails { get; set; }
         public DbSet<Rooms> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
+        public DbSet<Invoices> Invoices { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -36,18 +37,16 @@ namespace SysHotelv1.Models
             modelBuilder.Entity<Country>().HasKey(p => new { p.Id });
             #endregion
 
-            #region ForeignKeys
-            modelBuilder.Entity<Reservation>();
-            #endregion
+         
 
-            #region HasRequired
+            #region ForeignKeys
             modelBuilder.Entity<City>().HasRequired<Country>(s => s.Country).WithMany(t => t.City).HasForeignKey<int>(s => s.CountryId);
             modelBuilder.Entity<ReservationDetails>().HasRequired<Reservation>(s => s.Reservation).WithMany(t => t.ReservationDetails).HasForeignKey<int>(s => s.ReservationId);
-            modelBuilder.Entity<ReservationDetails>().HasRequired(x => x.Rooms);
-            modelBuilder.Entity<Rooms>().HasRequired(x => x.RoomType);
-            modelBuilder.Entity<Rooms>().HasRequired(x => x.BedType);
-            modelBuilder.Entity<Reservation>().HasRequired(x => x.BookingStatus);
-            modelBuilder.Entity<Reservation>().HasRequired(x => x.Clients);
+            modelBuilder.Entity<ReservationDetails>().HasRequired<Rooms>(x => x.Rooms).WithMany(a => a.ReservationDetails).HasForeignKey<int>(s=> s.RoomId);
+            modelBuilder.Entity<Rooms>().HasRequired<RoomType>(X=> X.RoomType).WithMany(x=> x.Rooms).HasForeignKey<int>(s=>s.RoomTypeId);
+            modelBuilder.Entity<Rooms>().HasRequired<BedType>(x => x.BedType).WithMany(x => x.Rooms).HasForeignKey<int>(s => s.BedTypeId);
+            modelBuilder.Entity<Reservation>().HasRequired<BookingStatus>(x => x.BookingStatus).WithMany(x => x.Reservations).HasForeignKey<int>(s => s.BookingStatusId);
+            modelBuilder.Entity<Reservation>().HasRequired<Clients>(x => x.Clients).WithMany(x => x.Reservation).HasForeignKey<int>(s => s.ClientId);
             #endregion
             base.OnModelCreating(modelBuilder);
         }

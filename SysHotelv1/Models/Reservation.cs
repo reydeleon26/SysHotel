@@ -19,5 +19,6 @@ namespace SysHotelv1.Models
         public BookingStatus BookingStatus { get; set; }
         public ICollection<ReservationDetails> ReservationDetails { get; set; }
 
+
     }
 }
