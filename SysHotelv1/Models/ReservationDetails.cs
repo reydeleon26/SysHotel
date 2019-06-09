@@ -20,4 +20,3 @@ namespace SysHotelv1.Models
 
 
     }
-}
