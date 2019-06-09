@@ -8,7 +8,11 @@ using System.Web;
 namespace SysHotelv1.Models
 {
 
-    #region PartialClasses
+    #region NotationAssign
+    [MetadataType(typeof(RoomsMetadata))]
+    public partial class Rooms
+    {
+    }
     #endregion
 
     #region SetUpOfNotations
@@ -176,7 +180,7 @@ namespace SysHotelv1.Models
 
         [DataType(DataType.Date)]
         [Required]
-        [Display(Name = "CheckIn")]
+        [Display(Name = "CheckOut")]
         public DateTime CheckOut { get; set; }
 
         [Required]
@@ -192,6 +196,7 @@ namespace SysHotelv1.Models
 
 
     }
+
 
 
 
