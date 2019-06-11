@@ -10,7 +10,11 @@ namespace SysHotelv1.Models
 
         
         public int Id { get; set; }
+        
         public string Description { get; set; }
+        
+        [Display(Name = "Precio por Cama")]
+        [DataType(DataType.Currency)]
         public decimal PricePerRoom { get; set; }         
         public ICollection <Rooms> Rooms { get; set; }
         public ICollection<ReservationDetails> ReservationDetails { get; set; }
